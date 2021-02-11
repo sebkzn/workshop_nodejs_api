@@ -18,7 +18,7 @@ More details and tests instructions can be found here [here](https://github.com/
 ```bash
 $ npm install -g nodemon # may be run as sudo
 $ git clone https://github.com/sebkzn/workshop_nodejs_api.git
-$ cd api
+$ cd workshop_nodejs_api/api
 $ npm install
 ```
 
