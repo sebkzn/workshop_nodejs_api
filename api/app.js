@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const Product = require('./models/product');
@@ -20,6 +21,17 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
+});
+
+app.use(bodyParser.json());
+
+app.post('/api/products', (req, res, next) => {
+    const product = new Product({
+        ...req.body
+    });
+    product.save()
+        .then(newProduct => res.status(201).json({ product: newProduct }))
+        .catch(error => res.status(400).json({ error }));
 });
 
 app.use('/api/products', (req, res, next) => {
