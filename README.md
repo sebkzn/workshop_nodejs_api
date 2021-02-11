@@ -3,8 +3,8 @@ Simple REST API build with NodeJS, Express, and MongoDB as part of an OpenClassr
 
 
 ## Goals
-the exercise consists in creating a REST API (as a CRUD app) with NodeJS and Express to communicate with a MongoDB database.  
-More details [here](https://github.com/OpenClassrooms-Student-Center/fullstack-activity/blob/1fd358bc732123b8e7de80e43c8176b517d0e539/README.md).
+the exercise consisted of creating a REST API (as a CRUD app) with NodeJS and Express to communicate with a MongoDB database.  
+More details and tests instructions can be found here [here](https://github.com/OpenClassrooms-Student-Center/fullstack-activity/blob/1fd358bc732123b8e7de80e43c8176b517d0e539/README.md).
 
 
 ### Requirements
