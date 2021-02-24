@@ -1,9 +1,6 @@
-const express = require('express');
-const router = express.Router();
-
 const Product = require('../models/product');
 
-router.post('/', (req, res, next) => {
+exports.createProduct = (req, res, next) => {
     const product = new Product({
         ...req.body
     });
@@ -20,9 +17,9 @@ router.post('/', (req, res, next) => {
             });
         }
     );
-});
+};
 
-router.get('/:id', (req, res, next) => {
+exports.getOneProduct = (req, res, next) => {
     Product.findOne({
         _id: req.params.id
     }).then(
@@ -38,9 +35,9 @@ router.get('/:id', (req, res, next) => {
             });
         }
     );
-});
+};
 
-router.put('/:id', (req, res, next) => {
+exports.editProduct = (req, res, next) => {
     Product.updateOne(
         { _id: req.params.id },
         { ...req.body, _id: req.params.id }
@@ -57,9 +54,9 @@ router.put('/:id', (req, res, next) => {
             });
         }
     );
-});
+};
 
-router.delete('/:id', (req, res, next) => {
+exports.deleteProduct = (req, res, next) => {
     Product.deleteOne({ _id: req.params.id }).then(
         () => {
             res.status(200).json({
@@ -73,10 +70,9 @@ router.delete('/:id', (req, res, next) => {
             });
         }
     );
-});
+};
 
-router.get('/' +
-    '', (req, res, next) => {
+exports.getAllProducts = (req, res, next) => {
     Product.find().then(
         (allProducts) => {
             res.status(200).json({
@@ -90,6 +86,4 @@ router.get('/' +
             });
         }
     );
-});
-
-module.exports = router;
+};
